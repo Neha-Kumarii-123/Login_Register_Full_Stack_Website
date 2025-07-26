@@ -85,12 +85,39 @@ inset: 0;
 margin:auto;
 display: flex;
 align-items: center;
+overflow: hidden;
+transform: scale(0);
+transition: height .2s ease, transform .5s ease;
+}
+
+.auth-modal.show{
+    transform: scale(1);
+}
+.auth-modal.slide{
+    height: 520px;
 }
 
 .auth-modal .form-box{
     width: 100%;
     padding: 40px;
 
+}
+
+.auth-modal .form-box.login, 
+.auth-modal.slide .form-box.register{
+    transform: translateX(0);
+    transition: transform .18s ease;
+}
+
+.auth-modal.slide .form-box.login{
+    
+    transform:translateX(-400px);
+    transition: none;
+}
+
+.auth-modal .form-box.register{
+    position: absolute;
+    transform: translateX(400px);
 }
 
 .form-box h2{
@@ -156,4 +183,31 @@ align-items: center;
 
 .form-box :hover{
     text-decoration: underline;
+}
+
+.form-box p a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.form-box p a:hover {
+    text-decoration: underline;
+}
+
+.auth-modal .close-btn-modal{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: #fff;
+    border: none;
+    border-bottom-left-radius: 20px;
+    font-size: 35px;
+    color: #222;
+    cursor: pointer;
+    z-index: 1;
+
+
 }
