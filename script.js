@@ -5,6 +5,8 @@ const loginBtnModal = document.querySelector('.login-btn-modal');
 const closeBtnModal = document.querySelector('.close-btn-modal');
 const profileBox = document.querySelector('.profile-box');
 const avatarCircle = document.querySelector('.avatar-circle');
+const alertBox = document.querySelector('.alert-box');
+
 
 
 
@@ -14,3 +16,11 @@ loginBtnModal.addEventListener('click', () => authModal.classList.add('show'));
 closeBtnModal.addEventListener('click', () => authModal.classList.remove('show' , 'slide'));
 
 avatarCircle.addEventListener('click', () => profileBox.classList.toggle('show'));
+
+setTimeout(() => alertBox.classList.add('show'), 50);
+setTimeout(() =>{
+    alertBox.classList.remove('show');
+    setTimeout(() =>alertBox.remove(),1000);
+}, 6000);
+
+
